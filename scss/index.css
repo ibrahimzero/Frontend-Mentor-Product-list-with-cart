@@ -66,24 +66,63 @@ a, a:visited, a:hover {
     display: flex;
   }
 }
+@media (max-width: 39.9375em) {
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 
 .remove {
   display: none;
 }
 
+.submit {
+  width: 100%;
+  border-radius: 30px;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  outline: none;
+  border: none;
+  background-color: hsl(14, 86%, 42%);
+}
+
 .desserts-cotainer {
   flex: 3;
+}
+@media (min-width: 39.9375em) and (max-width: 71.875em) {
+  .desserts-cotainer {
+    flex: 2;
+  }
 }
 .desserts-cotainer .cardes-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  gap: 1.3rem;
+}
+@media (max-width: 39.9375em) {
+  .desserts-cotainer .cardes-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (min-width: 39.9375em) and (max-width: 71.875em) {
+  .desserts-cotainer .cardes-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 39.9375em) {
+  .desserts-cotainer .cardes-container .card-container {
+    width: 80%;
+  }
 }
 .desserts-cotainer .cardes-container .card-container .img-container {
   position: relative;
 }
 .desserts-cotainer .cardes-container .card-container .img-container img {
-  max-width: 260px;
+  max-width: 100%;
   border-radius: 10px;
   transition: all 0.2s ease-out;
 }
@@ -96,7 +135,7 @@ a, a:visited, a:hover {
   padding: 8px 10px;
   bottom: -10px;
   left: 50%;
-  transform: translateX(-58%);
+  transform: translateX(-50%);
   background-color: #fff;
   transition: all 0.3s ease-in-out;
   display: flex;
@@ -173,11 +212,6 @@ a, a:visited, a:hover {
   color: hsl(14, 86%, 42%);
   margin-bottom: 0.5rem;
   font-weight: 500;
-}
-
-.right-container {
-  flex: 1;
-  background-color: red;
 }
 
 .right-container {
@@ -295,7 +329,7 @@ a, a:visited, a:hover {
   display: block;
 }
 .popup .popup-card {
-  width: 50%;
+  width: 40%;
   height: max-content;
   background-color: #fff;
   border-radius: 5px;
@@ -317,7 +351,7 @@ a, a:visited, a:hover {
   position: relative;
   display: flex;
   align-items: center;
-  padding-bottom: 15px;
+  padding: 10px;
   background-color: hsl(20, 50%, 98%);
   border-bottom: 1px solid hsl(13, 31%, 94%);
 }
@@ -339,9 +373,29 @@ a, a:visited, a:hover {
 }
 .popup .popup-card .popup-item-container .total-item-price {
   color: hsl(14, 65%, 9%);
+  font-weight: 600;
+  position: absolute;
+  right: 0;
+}
+.popup .pop-total-order {
+  position: relative;
+  padding: 10px;
+  color: hsl(12, 20%, 44%);
+  font-weight: 500;
+  background-color: hsl(20, 50%, 98%);
+  margin-bottom: 10px;
+}
+.popup .pop-total-order span {
+  display: inline-block;
+  color: hsl(14, 65%, 9%);
   font-weight: bold;
   position: absolute;
   right: 0;
+  font-size: 1.4rem;
+}
+.popup .submit {
+  margin: 10px 0;
+  padding: 10px;
 }
 
 /*# sourceMappingURL=index.css.map */

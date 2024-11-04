@@ -18,8 +18,7 @@ let orderCountSpan=document.querySelector('.right-container h3 span');
  popupIcon.src="assets/images/icon-order-confirmed.svg";
  popupIcon.className='popup-icon'
  popup.appendChild(popupIcon)
- let popupItem= document.createElement('div');
- popupItem.className='popup-item-container';
+ 
  let popupH1=document.createElement('h1');
  popupH1.innerHTML='Order Confirmed'
  popup.appendChild(popupH1)
@@ -58,15 +57,29 @@ function getData(){
            btn.dataset.price=json[i].price;
            let counterCount=0;
            let itemSpan=document.createElement('span');
+           let popCount=document.createElement('span')
            itemSpan.className='order-count'
            let itemPrice=btn.dataset.price;
+           let popupItem= document.createElement('div');
+            popupItem.className='popup-item-container';
            let pricespan=document.createElement('span');
+           let popupPrice=document.createElement('span');
+           popupPrice.innerHTML=`@ $${(itemPrice*1).toFixed(2)}`
            pricespan.innerHTML=`@ $${(itemPrice*1).toFixed(2)}`
            let totalItempriceSpan=document.createElement('span');
+           let popupTotalItemP=document.createElement('div');
+           popupTotalItemP.className='total-item-price'
            let totalItemprice=0
            totalItempriceSpan.className='total-price-span';
            let xBtn=document.createElement('img');
            xBtn.src="/assets/images/icon-remove-item.svg";
+           popupItem.className='popup-item-container';
+           
+           let popupImg=document.createElement('img')
+           popupImg.src=json[i].image.thumbnail;
+           popupTotalItemP.className='total-item-price'
+           let popupText=document.createElement('div');
+            popupText.className='item-text'
            //button-card on click
            removeDefult()
            if(btn.classList.contains('active')){
@@ -86,6 +99,8 @@ function getData(){
             btn.appendChild(counter);
             btn.appendChild(decreas)
             let yorCardItem=document.createElement("div");
+            let popupText=document.createElement('div');
+            popupText.className='item-text'
             if(!btn.classList.contains('active')){
                 counterCount++
                 orderCount++
@@ -96,15 +111,27 @@ function getData(){
             counter.innerHTML=counterCount
             orderCountSpan.innerHTML=orderCount
             itemSpan.innerHTML=`${counterCount}x`;
+            popCount.innerHTML=`${counterCount}x`;
                 if(!yorCardItem.classList.contains('selected')&&counterCount===1 ){
-                            itemName=document.createElement('h4')
-                            itemName.innerHTML=btn.dataset.name;
+                    let itemNamePop=document.createElement('h4');
+                    itemName=document.createElement('h4')
+                    itemName.innerHTML=btn.dataset.name;
+                    itemNamePop.innerHTML=btn.dataset.name;
+                    
+                    popupItem.appendChild(popupImg)
+                            popupText.appendChild(itemNamePop);
+                            popupText.appendChild(popCount)
+                            popupText.appendChild(popupPrice)
                             yorCardItem.appendChild(itemName)
                             defultOrder.appendChild(yorCardItem);
                             yorCardItem.appendChild(itemSpan)
                             yorCardItem.className='selected';
+                            popupText.classList.add('selected')
                             yorCardItem.appendChild(pricespan);
                             yorCardItem.appendChild(totalItempriceSpan);
+                            popupItem.appendChild(popupTotalItemP)
+                            popupItem.appendChild(popupText)
+                            popup.appendChild(popupItem)
                             yorCardItem.appendChild(xBtn)
                             //popup item value
                             xBtn.onclick=function(){
@@ -122,6 +149,7 @@ function getData(){
                             }                            
                             totalItemprice=(counterCount*itemPrice).toFixed(2);
                             totalItempriceSpan.innerHTML=`$<span>${totalItemprice}</span>`;
+                            popupTotalItemP.innerHTML=`$<span>${totalItemprice}</span>`
                 }
 
             increas.addEventListener('click',function(){
@@ -131,6 +159,7 @@ function getData(){
                 orderCount++;
                 totalItemprice=(counterCount*itemPrice).toFixed(2);
                 totalItempriceSpan.innerHTML=`$<span>${totalItemprice}</span>`;
+                popupTotalItemP.innerHTML=`$<span>${totalItemprice}</span>`
             })
             decreas.addEventListener('click',function(){
                
@@ -155,6 +184,7 @@ function getData(){
                 totalItemprice=totalItemprice=(counterCount*itemPrice).toFixed(2);;
                 totalItempriceSpan.innerHTML=`$<span>${totalItemprice}</span>`;
                 removeDefult()
+                popupTotalItemP.innerHTML=`$<span>${totalItemprice}</span>`
                 
             },0)
             btn.onmouseleave=function(){
@@ -166,7 +196,6 @@ function getData(){
                 }
                 
             }
-            console.log(document.querySelectorAll('.total-price-span :last-child'))
             let array=Array.from(document.querySelectorAll('.total-price-span :last-child'));
             let newArray=[];
             for(let i=0;i<array.length;i++){
@@ -181,36 +210,25 @@ function getData(){
                     ele.remove()
                 }
                 }
-                
                 )
-                let itemNamePop=document.createElement('h4');
-                itemNamePop.innerHTML=itemName.innerHTML;
-                let popupItem= document.createElement('div');
-                popupItem.className='popup-item-container';
-            let popupImg=document.createElement('img')
-            popupImg.src=json[i].image.thumbnail;
-            let popupText=document.createElement('div');
-            popupText.className='item-text'
-            popupText.appendChild(itemNamePop);
-            let popupPrice=document.createElement('span');
-            popupPrice.innerHTML=pricespan.innerHTML;
-            let popCount=document.createElement('span')
-            popCount.innerHTML=itemSpan.innerHTML;
-            popupText.appendChild(popCount)
-            popupText.appendChild(popupPrice);
-            let popupTotalItemP=document.createElement('div');
-            popupTotalItemP.className='total-item-price'
-            popupTotalItemP.innerHTML=`$<span>${totalItemprice}</span>`;
-            popupText.appendChild(popupPrice);
-            let item_container= document.createElement('div');
-            popupItem.appendChild(popupImg);
-            popupItem.appendChild(popupText);
-            popupItem.appendChild(popupTotalItemP);
-            popup.appendChild(popupItem)
-            console.log(popupItem)
-                
- 
 
+                submitBtn.onclick=function(){
+                    popupContainer.classList.add('active-popup');
+                    console.log((document.querySelectorAll(('.popup-item-container')[1]).firstChild)===(document.querySelectorAll(('.popup-item-container')[2]).firstChild))
+                    console.log(document.querySelectorAll(('.popup-item-container')[1]));
+                    let totalorder=document.createElement('div');
+                    totalorder.className='pop-total-order'
+                    totalorder.innerHTML=`Order Total <span>$${(totalItemsprice*1).toFixed(2)}</span>`;
+                    popup.appendChild(totalorder)
+                    let newOrderbtn=document.createElement('button');
+                    newOrderbtn.className='submit'
+                    newOrderbtn.innerHTML='Start New Order'
+                    popup.appendChild(newOrderbtn)
+                    newOrderbtn.onclick=function(){
+                        window.location.reload()
+                    }
+                
+                }
                 
            }
            
@@ -233,13 +251,10 @@ function getData(){
            cardContainer.appendChild(category);
            cardContainer.appendChild(name);
            cardContainer.appendChild(price);
-            mainContainerCards.appendChild(cardContainer)
-           
+            mainContainerCards.appendChild(cardContainer);
        }
     } );
-    submitBtn.onclick=function(){
-        popupContainer.classList.add('active-popup');
-    }
+
 }
 getData();
 function removeDefult(){

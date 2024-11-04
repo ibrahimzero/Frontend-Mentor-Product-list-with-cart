@@ -1,17 +1,32 @@
 
 .desserts-cotainer{
       flex:3 ;
+      @include breakpoint-between(small,medium){
+        flex: 2;
+    }
 .cardes-container{
+    @include breakpoint-down(small){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       
+    }
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    gap: 1rem;
+    gap: 1.3rem;
+    @include breakpoint-between(small,medium){
+        grid-template-columns: repeat(2,1fr);
+    }
     .card-container{
+        @include breakpoint-down(small){
+            width: 80%;
+        }
         
         .img-container{
-            
             position: relative;
             img{
-                max-width: 260px;
+                max-width: 100%;
+                
                  border-radius: 10px;
                  transition: all .2s ease-out;
             }
@@ -24,7 +39,7 @@
                 padding:  8px 10px ;
                 bottom:-10px;
                 left: 50%;
-                transform: translateX(-58%);
+                transform: translateX(-50%);
                 background-color: #fff;
                 transition: all .3s ease-in-out;
                 display: flex;

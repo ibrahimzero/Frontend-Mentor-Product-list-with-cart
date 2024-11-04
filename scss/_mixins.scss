@@ -15,4 +15,9 @@ $breakpoints-down:("small":"39.9375em","medium":"63.9375em","large":"87.4375em")
     @media (max-width:map-get($breakpoints-down ,$size)) {
         @content
     }
+};
+@mixin breakpoint-between($size1,$size2){
+    @media (min-width:39.9375em) and (max-width:71.875em) {
+        @content
+    }
 }

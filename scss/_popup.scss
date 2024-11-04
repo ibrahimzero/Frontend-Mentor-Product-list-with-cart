@@ -13,7 +13,7 @@
     }
 
     .popup-card{
-        width: 50%;
+        width: 40%;
         height: max-content;
         background-color: #fff;
         border-radius: 5px;
@@ -35,7 +35,7 @@
             display: flex;
             align-items: center;
             
-            padding-bottom: 15px;
+            padding: 10px;
             background-color: $Rose50;
             border-bottom: 1px solid $Rose100;
             img{
@@ -61,10 +61,32 @@
             }
             .total-item-price{
                 color: $Rose900;
-                font-weight: bold;
+                font-weight: 600;
                 position: absolute;
                 right: 0;
+                
             }
         }
+    }
+    .pop-total-order{
+        position: relative;
+        padding: 10px;
+        color: $Rose500;
+        font-weight: 500;
+        background-color: $Rose50;
+        margin-bottom: 10px;
+        span{
+            display: inline-block;
+            color: $Rose900;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+            font-size: 1.4rem;
+        }
+        
+    }
+    .submit{
+        margin: 10px 0;
+        padding: 10px;
     }
 }
