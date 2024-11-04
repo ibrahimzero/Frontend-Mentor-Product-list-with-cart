@@ -1,0 +1,114 @@
+
+.desserts-cotainer{
+      flex:3 ;
+.cardes-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+    .card-container{
+        
+        .img-container{
+            
+            position: relative;
+            img{
+                max-width: 260px;
+                 border-radius: 10px;
+                 transition: all .2s ease-out;
+            }
+            .btn{
+                transition: all .2s ease-out;
+                position: absolute;
+                width: 60%;
+                border-radius: 20px;
+                border: 1px solid $Rose500;
+                padding:  8px 10px ;
+                bottom:-10px;
+                left: 50%;
+                transform: translateX(-58%);
+                background-color: #fff;
+                transition: all .3s ease-in-out;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: $Rose900;
+                font-weight: 600;
+                img{
+                    margin-right: 5px;
+                }
+                &.active{
+                    display: flex;
+                    background-color: $mainColor;
+                    justify-content: space-between;
+                    border: 1px solid $mainColor;
+                    
+                   & div{
+                    display: inline-block;
+                    color: #fff;
+                    
+                    }
+                    .increas{
+                        right: 0;
+                        width: 20px;
+                        height:20px;
+                        text-align: center;
+                        border-radius: 50%;
+                        outline: 1px solid #fff;
+                        margin-right: 30px;
+                        background-repeat: no-repeat;
+                        background-position: 48% 48%;
+                        transition: all .3s ease-in-out;
+                        &:hover{
+                            background-color:#fff;
+                            color: $mainColor;
+                            background-image: url('/assets/images/newicon1.svg') !important;
+                            background-repeat: no-repeat;
+                            background-position: 48% 48%;
+                        
+                        }
+                    }
+
+                    .counter{
+                        color: #fff !important;
+                    }
+                    .decreas{left: 0;
+                        width: 20px;
+                        height:20px;
+                        text-align: center;
+                        border-radius: 50%;
+                        outline: 1px solid #fff;
+                        margin-left: 30px;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                        transition: all .3s ease-in-out;
+                        &:hover{
+                            background-color:#fff;
+                            color: $mainColor;
+                            background-image: url('/assets/images/newiacon2.svg') !important;
+                            background-repeat: no-repeat;
+                            background-position: center center;
+                        
+                        }
+                    }
+
+                    
+                }
+            }
+        }
+        .category{
+            color: $Rose400;
+            font-size: 0.8rem;
+            margin-top: 1.5rem;
+        }
+        .name{
+            font-weight: bold;
+            margin: .2rem 0;
+            color:$Rose900;
+        }
+        .price{
+            color:$mainColor;
+            margin-bottom: .5rem;
+            font-weight:500;
+        }
+    }
+}
+}

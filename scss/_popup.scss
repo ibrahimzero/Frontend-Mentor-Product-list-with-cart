@@ -1,0 +1,70 @@
+.popup{
+
+    position: fixed;
+    background-color: rgba(0, 0, 0, .7);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: none;
+    &.active-popup{
+        display: block;
+    }
+
+    .popup-card{
+        width: 50%;
+        height: max-content;
+        background-color: #fff;
+        border-radius: 5px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50% ,-50%);
+        padding: 30px;
+        h1{
+            color: $Rose900;
+            margin: 10px 0;
+        }
+        .popup-p{
+            color: $Rose500;
+            margin: 10px;
+        }
+        .popup-item-container{
+            position: relative;
+            display: flex;
+            align-items: center;
+            
+            padding-bottom: 15px;
+            background-color: $Rose50;
+            border-bottom: 1px solid $Rose100;
+            img{
+                width: 60px;
+                height:60px;
+                border-radius: 5px;
+                margin-right: 10px;
+            }
+            .item-text{
+                &:first-child{
+                    color: $Rose900;
+                }
+                :nth-child(2){
+                    color: $mainColor;
+                    margin-right: 10px;
+                }
+                :nth-child(3){
+                    color: $Rose500;
+
+                    
+                }
+
+            }
+            .total-item-price{
+                color: $Rose900;
+                font-weight: bold;
+                position: absolute;
+                right: 0;
+            }
+        }
+    }
+}

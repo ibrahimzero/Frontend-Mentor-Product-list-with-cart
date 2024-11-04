@@ -1,0 +1,113 @@
+.right-container{
+    flex: 1;
+    margin-left: 2rem;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding:  5px 20px;
+    text-align: center;
+    height: max-content;
+
+    h3{
+        text-align: left;
+        color: $mainColor;
+    }
+    .defult{
+    p{
+        color: $Rose400;
+        font-size: .8rem;
+    }
+    }
+    
+   
+    .selected{
+        transition: all .3s ease-out;
+        position: relative;
+        text-align: left;
+        width: 100%;
+        padding-bottom: 20px;
+        border-bottom: 1px solid $Rose100;
+        h4{
+            color: $Rose900;
+            font-size: .8rem;
+            margin-bottom: 5px;
+        }
+        :nth-child(2){
+            display: inline-block;
+            margin-right: 10px;
+            color: $mainColor
+        }
+        :nth-child(3){
+            display: inline-block;
+            margin-right: 10px;
+            color: $Rose300
+        }
+        :nth-child(4){
+            display: inline-block;
+            margin-right: 10px;
+            color: $Rose500
+        }
+        
+        img:nth-child(5){
+            position: absolute;
+            display: inline-block;
+            border-radius: 50%;
+            border: 1px solid $Rose500;
+            padding: 2px;
+            right: 0;
+        }
+        
+    }
+    .order-submit{
+        position: relative;
+        padding: 17px 0;
+        .total-price{
+            text-align: left;
+            .left{
+                display: inline-block;
+                color: $Rose500;
+                
+            }
+            .right{
+                display: inline-block;
+                position: absolute;
+                color: $Rose900;
+                right: 0;
+                font-size: 1.4rem;
+                font-weight: bold;
+            }
+        }
+        .submit-container{
+            
+            
+            p{
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                border-radius: 5px;
+                color: $Rose500;
+                font-size: .9rem;
+                background-color: $Rose50;
+                img{
+                    padding-right: 7px;
+    
+                }
+                span{
+                    color:$Rose900;
+                    font-weight: bold;
+                    margin: 0 3px;
+                }
+            }
+            .submit{
+                width: 100%;
+                border-radius: 30px;
+                color: #fff;
+                padding: 10px;
+                text-align: center;
+                outline: none;
+                border: none;
+                background-color: $mainColor;
+            }
+        }
+    }
+}

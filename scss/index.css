@@ -1,0 +1,347 @@
+@font-face {
+  font-family: "RedHatText";
+  src: url("../assets/fonts/RedHatText-VariableFont_wght.ttf");
+  font-style: normal;
+}
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html .main-container {
+  display: flex;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.3;
+  font-family: "Public Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: hsl(20, 50%, 98%);
+  font-family: "RedHatText", sans-serif;
+}
+body.noscroll {
+  overflow: hidden;
+}
+
+.flex {
+  display: flex;
+}
+.flex-js-sb {
+  justify-content: space-between;
+}
+.flex-ac-c {
+  align-content: center;
+}
+.flex-ai-c {
+  align-items: center;
+}
+
+a, a:visited, a:hover {
+  text-decoration: none;
+}
+
+@media (min-width: 40em) {
+  .main-container {
+    max-width: 90%;
+    height: 100vh;
+    margin: 30px auto;
+    display: flex;
+  }
+}
+@media (min-width: 64em) {
+  .main-container {
+    max-width: 90%;
+    height: 100vh;
+    margin: 30px auto;
+    display: flex;
+  }
+}
+
+.remove {
+  display: none;
+}
+
+.desserts-cotainer {
+  flex: 3;
+}
+.desserts-cotainer .cardes-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.desserts-cotainer .cardes-container .card-container .img-container {
+  position: relative;
+}
+.desserts-cotainer .cardes-container .card-container .img-container img {
+  max-width: 260px;
+  border-radius: 10px;
+  transition: all 0.2s ease-out;
+}
+.desserts-cotainer .cardes-container .card-container .img-container .btn {
+  transition: all 0.2s ease-out;
+  position: absolute;
+  width: 60%;
+  border-radius: 20px;
+  border: 1px solid hsl(12, 20%, 44%);
+  padding: 8px 10px;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-58%);
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: hsl(14, 65%, 9%);
+  font-weight: 600;
+}
+.desserts-cotainer .cardes-container .card-container .img-container .btn img {
+  margin-right: 5px;
+}
+.desserts-cotainer .cardes-container .card-container .img-container .btn.active {
+  display: flex;
+  background-color: hsl(14, 86%, 42%);
+  justify-content: space-between;
+  border: 1px solid hsl(14, 86%, 42%);
+}
+.desserts-cotainer .cardes-container .card-container .img-container .btn.active div {
+  display: inline-block;
+  color: #fff;
+}
+.desserts-cotainer .cardes-container .card-container .img-container .btn.active .increas {
+  right: 0;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border-radius: 50%;
+  outline: 1px solid #fff;
+  margin-right: 30px;
+  background-repeat: no-repeat;
+  background-position: 48% 48%;
+  transition: all 0.3s ease-in-out;
+}
+.desserts-cotainer .cardes-container .card-container .img-container .btn.active .increas:hover {
+  background-color: #fff;
+  color: hsl(14, 86%, 42%);
+  background-image: url("/assets/images/newicon1.svg") !important;
+  background-repeat: no-repeat;
+  background-position: 48% 48%;
+}
+.desserts-cotainer .cardes-container .card-container .img-container .btn.active .counter {
+  color: #fff !important;
+}
+.desserts-cotainer .cardes-container .card-container .img-container .btn.active .decreas {
+  left: 0;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border-radius: 50%;
+  outline: 1px solid #fff;
+  margin-left: 30px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: all 0.3s ease-in-out;
+}
+.desserts-cotainer .cardes-container .card-container .img-container .btn.active .decreas:hover {
+  background-color: #fff;
+  color: hsl(14, 86%, 42%);
+  background-image: url("/assets/images/newiacon2.svg") !important;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.desserts-cotainer .cardes-container .card-container .category {
+  color: hsl(7, 20%, 60%);
+  font-size: 0.8rem;
+  margin-top: 1.5rem;
+}
+.desserts-cotainer .cardes-container .card-container .name {
+  font-weight: bold;
+  margin: 0.2rem 0;
+  color: hsl(14, 65%, 9%);
+}
+.desserts-cotainer .cardes-container .card-container .price {
+  color: hsl(14, 86%, 42%);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.right-container {
+  flex: 1;
+  background-color: red;
+}
+
+.right-container {
+  flex: 1;
+  margin-left: 2rem;
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 5px 20px;
+  text-align: center;
+  height: max-content;
+}
+.right-container h3 {
+  text-align: left;
+  color: hsl(14, 86%, 42%);
+}
+.right-container .defult p {
+  color: hsl(7, 20%, 60%);
+  font-size: 0.8rem;
+}
+.right-container .selected {
+  transition: all 0.3s ease-out;
+  position: relative;
+  text-align: left;
+  width: 100%;
+  padding-bottom: 20px;
+  border-bottom: 1px solid hsl(13, 31%, 94%);
+}
+.right-container .selected h4 {
+  color: hsl(14, 65%, 9%);
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+}
+.right-container .selected :nth-child(2) {
+  display: inline-block;
+  margin-right: 10px;
+  color: hsl(14, 86%, 42%);
+}
+.right-container .selected :nth-child(3) {
+  display: inline-block;
+  margin-right: 10px;
+  color: hsl(14, 25%, 72%);
+}
+.right-container .selected :nth-child(4) {
+  display: inline-block;
+  margin-right: 10px;
+  color: hsl(12, 20%, 44%);
+}
+.right-container .selected img:nth-child(5) {
+  position: absolute;
+  display: inline-block;
+  border-radius: 50%;
+  border: 1px solid hsl(12, 20%, 44%);
+  padding: 2px;
+  right: 0;
+}
+.right-container .order-submit {
+  position: relative;
+  padding: 17px 0;
+}
+.right-container .order-submit .total-price {
+  text-align: left;
+}
+.right-container .order-submit .total-price .left {
+  display: inline-block;
+  color: hsl(12, 20%, 44%);
+}
+.right-container .order-submit .total-price .right {
+  display: inline-block;
+  position: absolute;
+  color: hsl(14, 65%, 9%);
+  right: 0;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.right-container .order-submit .submit-container p {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  color: hsl(12, 20%, 44%);
+  font-size: 0.9rem;
+  background-color: hsl(20, 50%, 98%);
+}
+.right-container .order-submit .submit-container p img {
+  padding-right: 7px;
+}
+.right-container .order-submit .submit-container p span {
+  color: hsl(14, 65%, 9%);
+  font-weight: bold;
+  margin: 0 3px;
+}
+.right-container .order-submit .submit-container .submit {
+  width: 100%;
+  border-radius: 30px;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  outline: none;
+  border: none;
+  background-color: hsl(14, 86%, 42%);
+}
+
+.popup {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: none;
+}
+.popup.active-popup {
+  display: block;
+}
+.popup .popup-card {
+  width: 50%;
+  height: max-content;
+  background-color: #fff;
+  border-radius: 5px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px;
+}
+.popup .popup-card h1 {
+  color: hsl(14, 65%, 9%);
+  margin: 10px 0;
+}
+.popup .popup-card .popup-p {
+  color: hsl(12, 20%, 44%);
+  margin: 10px;
+}
+.popup .popup-card .popup-item-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-bottom: 15px;
+  background-color: hsl(20, 50%, 98%);
+  border-bottom: 1px solid hsl(13, 31%, 94%);
+}
+.popup .popup-card .popup-item-container img {
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.popup .popup-card .popup-item-container .item-text:first-child {
+  color: hsl(14, 65%, 9%);
+}
+.popup .popup-card .popup-item-container .item-text :nth-child(2) {
+  color: hsl(14, 86%, 42%);
+  margin-right: 10px;
+}
+.popup .popup-card .popup-item-container .item-text :nth-child(3) {
+  color: hsl(12, 20%, 44%);
+}
+.popup .popup-card .popup-item-container .total-item-price {
+  color: hsl(14, 65%, 9%);
+  font-weight: bold;
+  position: absolute;
+  right: 0;
+}
+
+/*# sourceMappingURL=index.css.map */
